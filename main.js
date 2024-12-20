@@ -1,18 +1,18 @@
 /**
  * Um pequeno script responsavel por adquirir alguns dados de uma API e mostrar em uma página web
- * Utiliza ao máximo de funções anonimas
+ * Dado um determinado nome de usuário, filtrar os post dele pelo titulo e se todos os afazeres deles foram feitos
  * Um evento de click é adiciona em um botão para buscar o id do usuário pelo nome desejado
  * Para determinadar quais são os post de um determinado usuário é utilizado um filter, enquanto que um map adquire o titulo no seguinte formato: <li>Titulo</li>
  * Um reduce é verificado para determinar se todos os afazeres deste usuário todos realizados
  * 
  * Funções anonimas facilitam a leitura de codigo e mudam a abordagem que seria feita
- * A programação funcional também permite isolar a lógica do código
+ * A programação funcional também permite isolar a lógica do código de outros pedaços, até permitindo que eu possa 
  */
 
 const inputNome = document.getElementById("inputNome");
 const filterBtn = document.getElementById("inputFilter");
 const contentDiv = document.getElementById("content");
- 
+
 filterBtn.addEventListener("click", async () =>  {
     const user = await fetch("https://jsonplaceholder.typicode.com/users")
     .then(value => value.json())
